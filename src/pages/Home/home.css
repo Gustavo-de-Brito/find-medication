@@ -1,0 +1,10 @@
+.view-container {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px 0;
+}
+
+.content {
+  width: 980px;
+  min-height: 88vh;
+}
