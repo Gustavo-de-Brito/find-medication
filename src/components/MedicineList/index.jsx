@@ -3,7 +3,7 @@ import MedicineItem from '../MedicineItem';
 
 const MedicineList = ({ foundedMedicine, medicines }) => {
   return (
-    <ul className="list-group mt-5 px-3">
+    <ul className="list-group mt-5 px-2 px-md-3">
       {foundedMedicine &&
         medicines.map((medicine) => (
           <MedicineItem
