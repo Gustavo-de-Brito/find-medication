@@ -10,6 +10,7 @@ const MedicationList = ({ foundedMedication, medications }) => {
             key={medication.idProduto}
             name={medication.nomeProduto}
             company={medication.razaoSocial}
+            processNumber={medication.numProcesso}
           />
         ))}
       {!foundedMedication && (
