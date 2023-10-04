@@ -1,20 +1,20 @@
 import SearchMedication from '../../components/SearchMedication';
 import { useState } from 'react';
-import MedicineList from '../../components/MedicineList';
-import { findMedicineByName } from '../../services/medicineServices';
+import MedicationList from '../../components/MecationList';
+import { findMedicationByName } from '../../services/medicationServices';
 import ViewContainer from '../../components/ViewContainer';
 
 const Home = () => {
   const [searchName, setSearchName] = useState('');
-  const [medicines, setMedicines] = useState([]);
+  const [medications, setMedications] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const getMedication = async () => {
     setIsLoading(true);
 
     try {
-      const data = await findMedicineByName(searchName);
-      setMedicines(data.content);
+      const data = await findMedicationByName(searchName);
+      setMedications(data.content);
     } catch (err) {
       console.log(err);
     }
@@ -31,9 +31,9 @@ const Home = () => {
         isLoading={isLoading}
       />
       <h3 className="text-primary ms-2 ms-md-3 mt-4">Medicamentos</h3>
-      <MedicineList
-        foundedMedicine={medicines.length > 0}
-        medicines={medicines}
+      <MedicationList
+        foundedMedication={medications.length > 0}
+        medications={medications}
       />
     </ViewContainer>
   );

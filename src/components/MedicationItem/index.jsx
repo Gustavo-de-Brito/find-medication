@@ -1,6 +1,6 @@
 import P from 'prop-types';
 
-const MedicineItem = ({ name, company }) => {
+const MedicationItem = ({ name, company }) => {
   return (
     <a
       href="#"
@@ -16,9 +16,9 @@ const MedicineItem = ({ name, company }) => {
   );
 };
 
-MedicineItem.propTypes = {
+MedicationItem.propTypes = {
   name: P.string,
   company: P.string,
 };
 
-export default MedicineItem;
+export default MedicationItem;
