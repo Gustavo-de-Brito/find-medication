@@ -6,8 +6,13 @@ const SearchMedication = ({
   getMedication,
   isLoading,
 }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    getMedication();
+  };
+
   return (
-    <div className="input-group my-3 px-2 px-md-3">
+    <form onSubmit={handleSubmit} className="input-group my-3 px-2 px-md-3">
       <input
         type="text"
         className="form-control border-2 border-primary border-opacity-25"
@@ -21,14 +26,13 @@ const SearchMedication = ({
       <button
         className="btn btn-outline-primary border-2 border-primary
         border-opacity-25 fw-bold"
-        type="button"
+        type="submit"
         id="button-addon2"
-        onClick={getMedication}
         disabled={isLoading}
       >
         <i className="bi bi-search fs-4" />
       </button>
-    </div>
+    </form>
   );
 };
 
