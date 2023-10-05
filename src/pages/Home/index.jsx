@@ -3,6 +3,7 @@ import { useState } from 'react';
 import MedicationList from '../../components/MecationList';
 import { findMedicationByName } from '../../services/medicationServices';
 import ViewContainer from '../../components/ViewContainer';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 const Home = () => {
   const [searchName, setSearchName] = useState('');
@@ -36,10 +37,13 @@ const Home = () => {
         isLoading={isLoading}
       />
       <h3 className="text-primary ms-2 ms-md-3 mt-4">Medicamentos</h3>
-      <MedicationList
-        foundedMedication={medications.length > 0}
-        medications={medications}
-      />
+      {!isLoading && (
+        <MedicationList
+          foundedMedication={medications.length > 0}
+          medications={medications}
+        />
+      )}
+      <LoadingSpinner isLoading={isLoading} />
     </ViewContainer>
   );
 };

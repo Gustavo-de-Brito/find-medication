@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import MedicationDetailsCard from '../../components/MedicationDetailsCard';
 import ViewContainer from '../../components/ViewContainer';
-import { useContext, useEffect } from 'react';
+import { useCallback, useContext, useEffect } from 'react';
 import { findMedicationByProcessNumber } from '../../services/medicationServices';
 import { MedicationContext } from '../../contexts/MedicationDetails';
 import LoadingSpinner from '../../components/LoadingSpinner';
@@ -27,7 +27,7 @@ const MedicationDetails = () => {
     };
   };
 
-  const getMedicationDetails = async () => {
+  const getMedicationDetails = useCallback(async () => {
     setIsLoading(true);
 
     try {
@@ -39,11 +39,11 @@ const MedicationDetails = () => {
     }
 
     setIsLoading(false);
-  };
+  }, [setMedicationData, setIsLoading, processNumber]);
 
   useEffect(() => {
     getMedicationDetails();
-  }, []);
+  }, [getMedicationDetails]);
 
   return (
     <ViewContainer>
