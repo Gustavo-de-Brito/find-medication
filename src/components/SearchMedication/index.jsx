@@ -26,7 +26,7 @@ const SearchMedication = ({
         onClick={getMedication}
         disabled={isLoading}
       >
-        Pesquisar
+        <i className="bi bi-search fs-4" />
       </button>
     </div>
   );

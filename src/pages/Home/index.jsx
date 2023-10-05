@@ -11,6 +11,7 @@ const Home = () => {
 
   const getMedication = async () => {
     setIsLoading(true);
+
     if (searchName.length === 0) {
       setIsLoading(false);
       return;

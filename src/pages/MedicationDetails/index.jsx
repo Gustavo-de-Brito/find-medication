@@ -4,6 +4,7 @@ import ViewContainer from '../../components/ViewContainer';
 import { useContext, useEffect } from 'react';
 import { findMedicationByProcessNumber } from '../../services/medicationServices';
 import { MedicationContext } from '../../contexts/MedicationDetails';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 const MedicationDetails = () => {
   const { medicationData, setMedicationData, isLoading, setIsLoading } =
@@ -52,15 +53,7 @@ const MedicationDetails = () => {
           medicationData={medicationData}
         />
       )}
-      {isLoading && (
-        <div
-          className="spinner-border text-primary m-auto"
-          style={{ width: '6rem', height: '6rem' }}
-          role="status"
-        >
-          <span className="visually-hidden">Carregando...</span>
-        </div>
-      )}
+      <LoadingSpinner isLoading={isLoading} />
     </ViewContainer>
   );
 };
