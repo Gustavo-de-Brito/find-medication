@@ -25,12 +25,12 @@ visualizar detalhes específicos e baixar a bula do paciente.
 
 ```bash
 # Clone o repositório
-git clone https://github.com/Gustavo-de-Brito/Trackit.git
+git clone https://github.com/Gustavo-de-Brito/find-medication.git
 ```
 
 ```bash
 # Entre na pasta do projeto
-cd Trackit
+cd find-medication
 ```
 
 ```bash
